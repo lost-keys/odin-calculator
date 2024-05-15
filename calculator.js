@@ -19,4 +19,11 @@ function operate(operator, a, b) {
 }
 
 const operators = ["add", "subtract", "multiply", "divide"];
-let a, b;
+let a, b, selection;
+const buttons = document.querySelector("#buttons");
+
+buttons.addEventListener("click", (e) => {
+  if(e.target.tagName === "BUTTON") {
+    selection = e.target.textContent;
+  }
+});
