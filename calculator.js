@@ -20,16 +20,17 @@ function operate(operator, a, b) {
 
 function updateDisplay(selection) {
   const display = document.getElementById("display-container");
-  display.textContent = selection;
+  display.textContent = selection.join("");
 }
 
 const operators = ["add", "subtract", "multiply", "divide"];
-let a, b, selection;
+let a, b;
+let selection = [];
 const buttons = document.querySelector("#buttons-container");
 
 buttons.addEventListener("click", (e) => {
   if(e.target.className === "numerical") {
-    selection = e.target.textContent;
+    selection.push (e.target.textContent);
     updateDisplay(selection);
   }
 });
