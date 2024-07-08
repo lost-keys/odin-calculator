@@ -18,13 +18,18 @@ function operate(operator, a, b) {
   return window[operator](a, b);
 }
 
+function updateDisplay(selection) {
+  const display = document.getElementById("display-container");
+  display.textContent = selection;
+}
+
 const operators = ["add", "subtract", "multiply", "divide"];
 let a, b, selection;
 const buttons = document.querySelector("#buttons-container");
 
 buttons.addEventListener("click", (e) => {
-  if(e.target.tagName === "BUTTON") {
+  if(e.target.className === "numerical") {
     selection = e.target.textContent;
-    console.log(selection);
+    updateDisplay(selection);
   }
 });
