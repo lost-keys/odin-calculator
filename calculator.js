@@ -18,6 +18,17 @@ function operate(operator, a, b) {
   return window[operator](a, b);
 }
 
+function addDecimal() {
+    // if no nothing has been inputted, insert 0 before the decimal
+    if (!selection.length) {
+      selection.push(0);
+    // if selection already containts a decimal, do not insert another
+    } else if (selection.includes(".")) {
+      return;
+    }
+    selection.push(".");
+}
+
 function updateDisplay(selection) {
   const display = document.getElementById("display-container");
   display.textContent = selection.join("");
@@ -40,15 +51,7 @@ buttons.addEventListener("click", (e) => {
       selection.pop();
       break;
     case "decimal":
-      // if selection already containts a decimal, no not insert another
-
-      // if no nothing has been inputted, insert 0 before the decimal
-      if (!selection.length) {
-        selection.push(0);
-      } else if (selection.includes(".")) {
-        break;
-      }
-      selection.push(".");
+      addDecimal();
       break;
   }
 
