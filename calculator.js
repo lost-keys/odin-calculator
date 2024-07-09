@@ -39,6 +39,17 @@ buttons.addEventListener("click", (e) => {
     case "backspace":
       selection.pop();
       break;
+    case "decimal":
+      // if selection already containts a decimal, no not insert another
+
+      // if no nothing has been inputted, insert 0 before the decimal
+      if (!selection.length) {
+        selection.push(0);
+      } else if (selection.includes(".")) {
+        break;
+      }
+      selection.push(".");
+      break;
   }
 
   updateDisplay(selection);
