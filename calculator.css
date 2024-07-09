@@ -7,6 +7,12 @@ body {
   height: 100vh;
 }
 
+/* Enables click events to function when pointer is positioned on
+an svg element */
+svg {
+  pointer-events: none;
+}
+
 #calculator-container {
   font-family: Arial, Helvetica, sans-serif;
   width: 400px;
