@@ -29,8 +29,14 @@ let selection = [];
 const buttons = document.querySelector("#buttons-container");
 
 buttons.addEventListener("click", (e) => {
-  if(e.target.className === "numerical") {
-    selection.push (e.target.textContent);
-    updateDisplay(selection);
+  switch(e.target.className) {
+    case "numerical":
+      selection.push (e.target.textContent);
+      break;
+    case "clear":
+      selection = [];
+      break;
   }
+
+  updateDisplay(selection);
 });
