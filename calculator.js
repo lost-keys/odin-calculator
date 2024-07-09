@@ -36,6 +36,9 @@ buttons.addEventListener("click", (e) => {
     case "clear":
       selection = [];
       break;
+    case "backspace":
+      selection.pop();
+      break;
   }
 
   updateDisplay(selection);
